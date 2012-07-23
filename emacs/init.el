@@ -40,6 +40,12 @@
 (require 'puppet-mode)
 (require 'sr-speedbar)
 
+(setq remem-prog-dir "~/.emacs.d/files/remem")
+(setq remem-database-dir "~/.emacs.d/files/remem/db")
+(setq remem-scopes-list '(("my-email" 6 5 500)
+			  ("my-notes" 2 10 500)))
+(require 'remem)
+
 ;; Load Erlang
 (load "erlang-mode")
 
