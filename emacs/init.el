@@ -1,3 +1,4 @@
+(require 'cl)
 ;; ELPA
 (when
     (load
@@ -27,20 +28,19 @@
                  (not (equal f ".")))
         (add-to-list 'load-path name)))))
 
-(setq load-path (cons "~/emacs.d/files/erlang" load-path))
-
 ;; Require
-(require 'ido)
-(require 'coffee-mode)
-(require 'stylus-mode)
-(require 'php-mode)
-(require 'flymake)
-(require 'flymake-cursor)
-(require 'color-theme)
-(require 'puppet-mode)
-(require 'sr-speedbar)
-
+(loop for s in '(ido flymake flymake-cursor
+		     color-theme puppet-mode
+		     sr-speedbar package) do (require s))
+;; Packages
+(add-to-list 'package-archives
+	     '("marmalade" . "http://marmalade-repo.org/packages/")
+             '("melpa" . "http://melpa.milkbox.net/packages/"))
+(package-initialize)
+(loop for p in '(nrepl) do (when (not (package-installed-p p))
+			     (package-install p)))
 ;; Load Erlang
+(setq load-path (cons "~/emacs.d/files/erlang" load-path))
 (load "erlang-mode")
 
 ;; Iced Coffee
@@ -51,6 +51,9 @@
 
 ;; JSON
 (add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
+
+;; Markdown
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 
 ;; Flymake colors
 (set-face-background 'flymake-errline "red4")
