@@ -29,21 +29,24 @@
         (add-to-list 'load-path name)))))
 ;; Require
 (require 'package)
+(package-initialize)
 ;; Packages
 (add-to-list 'package-archives
 	     '("marmalade" . "http://marmalade-repo.org/packages/")
              '("melpa" . "http://melpa.milkbox.net/packages/"))
-(package-initialize)
 (loop for p in '(nrepl coffee-mode php-mode
 		       puppet-mode markdown-mode
 		       js2-mode clojure-mode erlang
 		       clojure-project-mode clojurescript-mode
 		       color-theme zenburn-theme auto-complete
+		       yaml-mode
 		       ac-nrepl) do (when (not (package-installed-p p))
-								     (package-install p)))
+				      (package-install p)))
+
 (loop for s in '(ido flymake flymake-cursor
 		     color-theme puppet-mode
 		     auto-complete-config
+		     yaml-mode blink-mode
 		     sr-speedbar package) do (require s))
 ;; AC
 (global-auto-complete-mode t)
@@ -67,6 +70,9 @@
 
 ;; Markdown
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+
+;; YAML
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 (setq load-path (cons  "/usr/local/lib/erlang/lib/tools-2.6.8/emacs" load-path))
 (setq erlang-root-dir "/usr/local/lib/erlang")
