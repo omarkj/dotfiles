@@ -29,6 +29,7 @@ source $DOTFILES/couchdb/aliases.zsh
 source $DOTFILES/memcached/aliases.zsh
 #source $DOTFILES/python/virtualenv.zsh
 source $DOTFILES/scm_breeze/init.zsh
+source $DOTFILES/aliases/init.zsh
 
 export LESSCHARSET=utf-8
 export LANG=is_IS.UTF-8
@@ -43,3 +44,4 @@ alias vi='vim'
 alias reload='source ~/.zshrc'
 alias mv='mv -i'
 alias tmux='tmux -u'
+alias mutt='cd ~/Desktop && mutt'
