@@ -28,6 +28,7 @@ source $DOTFILES/postgresql/aliases.zsh
 source $DOTFILES/couchdb/aliases.zsh
 source $DOTFILES/memcached/aliases.zsh
 #source $DOTFILES/python/virtualenv.zsh
+source $DOTFILES/python/virtualenv.zsh
 source $DOTFILES/scm_breeze/init.zsh
 source $DOTFILES/aliases/init.zsh
 

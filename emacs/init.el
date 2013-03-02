@@ -68,6 +68,11 @@
 ;; JSON
 (add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
 
+;; JS
+(custom-set-variables
+ '(js2-basic-offset 2)
+ '(js2-bounce-indent-p t))
+
 ;; Markdown
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 
