@@ -1,5 +1,8 @@
-emacs/elpa
-emacs/ac-comphist.dat
+emacs.d/elpa
+emacs.d/ac-comphist.dat
+emacs.d/places
+emacs.d/unmanaged
+emacs.d/edts
 *~
 *#
 .DS*
