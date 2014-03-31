@@ -1,1 +1,0 @@
-[ -s "/Users/omaryasin/.scm_breeze/scm_breeze.sh" ] && source "/Users/omaryasin/.scm_breeze/scm_breeze.sh"
